@@ -1,13 +1,10 @@
 import React from 'react';
-import { OrganizationExtendedDto, OrganizationRole, RoleDetailsDto, UserDto } from '../services/axiosApiAppClient';
-import { ProposalDto, OrganizationLevel } from '../services/apolloGraphqlAppClient/models/types';
 
 export interface IRoutesMap {
   auth: { [key: string]: IRoute };
   app: { [key: string]: IRoute };
   admin: { [key: string]: IRoute };
 }
-
 
 export interface IRoute {
   id: string;
@@ -19,9 +16,7 @@ export interface IRoute {
   methods?: { [key: string]: (...rest) => any };
 }
 
-
-
-export const ROUTES_MAP: IRoutesMap = {
+const ROUTES_MAP: IRoutesMap = {
   auth: {
     auth: {
       id: 'auth',
@@ -45,18 +40,20 @@ export const ROUTES_MAP: IRoutesMap = {
       title: 'Home',
       hidden: true,
     },
-    cropper: {
-      id: 'cropper',
-      url: '/cropper',
+    imageCropper: {
+      id: 'imageCropper',
+      url: '/imageCropper',
       title: 'Image Cropper',
     },
-    textselector: {
-      id: 'text-selector',
-      url: '/text-selector',
-      title: 'text-selector',
+    textSelector: {
+      id: 'textSelector',
+      url: '/textSelector',
+      title: 'Text Selector',
     },
   },
   admin: {
     //
   },
 };
+
+export default ROUTES_MAP;

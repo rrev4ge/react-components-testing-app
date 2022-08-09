@@ -3,7 +3,7 @@ import { Dropdown, Space } from 'antd';
 import React, { useEffect } from 'react';
 import { useAuth } from 'react-oauth2-pkce-btoa';
 import { MenuTemplate } from '../../components';
-import { ProfileMenu } from '../../config/Menus';
+import { MENUS_MAP } from '../../config';
 import { urls } from '../../services/restApiAppClient/restApiAppClient';
 import { useAppContext } from '../../providers/AppContextProvider';
 
@@ -11,11 +11,12 @@ const ProfileLayout = (): React.ReactElement => {
   const { authService } = useAuth();
   const { authProfile } = useAppContext();
 
+  const { PROFILE_MENU } = MENUS_MAP;
   return (
     <Dropdown
       overlay={
         <MenuTemplate
-          list={ProfileMenu}
+          list={PROFILE_MENU}
           onClick={({ key }) => {
             if (key === 'password') {
               authService.profile('password');

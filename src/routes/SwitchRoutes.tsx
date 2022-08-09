@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import { ResultPage } from '../ROUTES';
+import { ResultPage } from '../pages';
 
 const SwitchRoutes = ({ children, ...rest }: { children: React.ReactNode; rest?: any }): React.ReactElement => {
   return (

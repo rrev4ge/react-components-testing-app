@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { PageHeader, Spin } from 'antd';
 import { Route } from 'antd/lib/breadcrumb/Breadcrumb';
-import { ROUTES } from '../../config/ROUTES';
+import { ROUTES_MAP } from '../../config';
 
 export interface IPageTemplateProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
   title?: string | React.ReactNode;
@@ -13,17 +13,19 @@ export interface IPageTemplateProps extends Omit<React.HTMLAttributes<HTMLDivEle
   loading?: boolean;
 }
 
+const { app } = ROUTES_MAP;
+
 const defaultProps = {
   loading: false,
 };
 
 const urls: { [url: string]: string } = {};
-Object.keys(ROUTES).map((key) => {
-  urls[ROUTES[key].url] = key;
+Object.keys(app).map((key) => {
+  urls[app[key].url] = key;
 });
 
 const renderRoute = (route: any) => {
-  if (ROUTES[urls[route.path]]?.inactive) {
+  if (app[urls[route.path]]?.inactive) {
     return route.breadcrumbName;
   }
   return <Link to={route.path}>{route.breadcrumbName}</Link>;

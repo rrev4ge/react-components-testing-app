@@ -2,10 +2,12 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './themes';
 import RootRouter from './routes/RootRouter';
-import MobxAppClientProvider from './providers/MobxAppClientProvider';
-import ApolloAppClientProvider from './providers/ApolloAppClientProvider';
-import AuthenticationProvider from './providers/AuthhenticationProvider';
-import { AppContextProvider } from './providers/AppContextProvider';
+import {
+  ApolloAppClientProvider,
+  AppContextProvider,
+  AuthenticationProvider,
+  MobxAppClientProvider,
+} from './providers';
 
 const App = (): JSX.Element => {
   return (

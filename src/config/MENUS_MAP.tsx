@@ -13,7 +13,7 @@ export type TMenu = ItemType & {
   children?: TMenu[];
 };
 
-export const SidebarMenu: TMenu[] = [
+const SIDEBAR_MENU: TMenu[] = [
   {
     key: '/',
     path: '/',
@@ -21,45 +21,25 @@ export const SidebarMenu: TMenu[] = [
     label: <Link to="/">Home</Link>,
   },
   {
-    key: 'lists',
+    key: 'applications',
     icon: <UnorderedListOutlined />,
-    label: 'Lists',
+    label: 'Applications',
     children: [
       {
-        key: '/translations',
-        path: '/translations',
-        label: <Link to="/translations">Translations</Link>,
+        key: '/imageCropper',
+        path: '/imageCropper',
+        label: <Link to="/imageCropper">Image Cropper</Link>,
       },
       {
-        key: '/paragraphs',
-        path: '/paragraphs',
-        label: <Link to="/paragraphs">Paragraphs</Link>,
-      },
-      {
-        key: '/countries',
-        path: '/countries',
-        label: <Link to="/countries">Countries</Link>,
-      },
-      {
-        key: '/languages',
-        path: '/languages',
-        label: <Link to="/languages">Languages</Link>,
-      },
-      {
-        key: '/organizations',
-        path: '/organizations',
-        label: <Link to="/organizations">Organizations</Link>,
-      },
-      {
-        key: '/publications',
-        path: '/organizations',
-        label: <Link to="/publications">Publications</Link>,
+        key: '/textSelector',
+        path: '/textSelector',
+        label: <Link to="/textSelector">Text Selector</Link>,
       },
     ],
   },
 ];
 
-export const ProfileMenu: TMenu[] = [
+const PROFILE_MENU: TMenu[] = [
   {
     key: 'profile',
     label: 'Profile',
@@ -81,3 +61,5 @@ export const ProfileMenu: TMenu[] = [
     label: 'Log Out',
   },
 ];
+
+export default { PROFILE_MENU, SIDEBAR_MENU };

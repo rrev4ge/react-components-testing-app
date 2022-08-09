@@ -1,9 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { MenuTemplate } from '../../components';
-import { SidebarMenu } from '../../config/Menus';
+import { MENUS_MAP } from '../../config';
 
 const SiderLayout = ({ collapsedActions }): React.ReactElement => {
+  const { SIDEBAR_MENU } = MENUS_MAP;
   const { collapsed, manualCollapsed, setManualCollapsed } = collapsedActions;
 
   return (
@@ -21,7 +22,7 @@ const SiderLayout = ({ collapsedActions }): React.ReactElement => {
         collapsible
         onCollapse={() => setManualCollapsed(!manualCollapsed)}
       >
-        <MenuTemplate list={SidebarMenu} />
+        <MenuTemplate list={SIDEBAR_MENU} />
       </Layout.Sider>
     </>
   );

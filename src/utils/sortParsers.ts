@@ -1,4 +1,4 @@
-import { SortOrder } from '../services/apolloGraphqlAppClient/models/types';
+import { SortOrder } from './historyHandlers';
 
 const getTableFieldOrder = (field: string, sort: any): 'ascend' | 'descend' | undefined => {
   const FIELD = field
@@ -25,30 +25,5 @@ const getOrderBy4OpenApi = (sort) => {
     })
     .filter((item) => item !== null || item !== undefined);
 };
-
-// setSorter = (sorter) => {
-//   const newSorter = (item) => {
-//     if (item.substr(0, 1) === '-') {
-//       this.sorter[item.substr(1)] = {
-//         columnKey: item.substr(1),
-//         field: item.substr(1),
-//         order: 'descend',
-//       };
-//     } else {
-//       this.sorter[item] = {
-//         columnKey: item,
-//         field: item,
-//         order: 'ascend',
-//       };
-//     }
-//   };
-//   if (Array.isArray(sorter)) {
-//     sorter.forEach((item) => {
-//       newSorter(item);
-//     });
-//   } else {
-//     newSorter(sorter);
-//   }
-// };
 
 export default { getTableFieldOrder, getOrderBy4OpenApi };

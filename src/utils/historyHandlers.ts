@@ -1,5 +1,9 @@
 import queryString from 'query-string';
-import { SortOrder } from '../services/apolloGraphqlAppClient/models/types';
+
+export enum SortOrder {
+  Desc = 'Desc',
+  Asc = 'Asc',
+}
 
 const getHistorySearchData = (
   history,

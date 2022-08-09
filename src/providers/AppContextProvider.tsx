@@ -34,7 +34,7 @@ export const useAppContext = () => {
   return context;
 };
 
-export const AppContextProvider = ({ children }) => {
+const AppContextProvider = ({ children }) => {
   const [apiError, setApiError] = useState<any>(null);
   const [authProfile, setAuthProfile] = useState<TAuthProfile>(null);
   const [authProfileOrganizations, setAuthProfileOrganizations] = useState<TAuthProfileOrganizations>(undefined);
@@ -96,43 +96,47 @@ export const AppContextProvider = ({ children }) => {
 
   const authorizeProcess = async () => {
     try {
-      const validate = await services.axiosApiAppClient.authentication.getAuthValidate(
-        authService.getAuthTokens()?.access_token,
-      );
-      const profile = await services.axiosApiAppClient.users.getApiOrgUsersMe();
-      const organizations = await fetchProfileOrganizations(profile);
-      setAuthProfile(profile);
-      if (organizations || organizations === null) {
-        setAuthProfileOrganizations(organizations);
-      }
+      // const validate = await services.axiosApiAppClient.authentication.getAuthValidate(
+      //   authService.getAuthTokens()?.access_token,
+      // );
+      // const profile = await services.axiosApiAppClient.users.getApiOrgUsersMe();
+      // const organizations = await fetchProfileOrganizations(profile);
+      // setAuthProfile(profile);
+      // if (organizations || organizations === null) {
+      //   setAuthProfileOrganizations(organizations);
+      // }
+      setAuthProfileOrganizations(null);
     } catch (error) {
-      await authService.logout();
+      // await authService.logout();
+
+      setAuthProfileOrganizations(null);
     }
   };
 
   useEffect(() => {
-    if (
-      (authService.isPending() && !authService.getCodeFromLocation(window.location)) ||
-      (!authService.isPending() && !authService.isAuthenticated() && !authService.getCodeFromLocation(window.location))
-    ) {
-      authService.authorize();
-    }
-    if (authService.isAuthenticated()) {
-      authorizeProcess();
-    }
+    // if (
+    //   (authService.isPending() && !authService.getCodeFromLocation(window.location)) ||
+    //   (!authService.isPending() && !authService.isAuthenticated() && !authService.getCodeFromLocation(window.location))
+    // ) {
+    //   authService.authorize();
+    // }
+    // if (authService.isAuthenticated()) {
+    //   authorizeProcess();
+    // }
+    authorizeProcess();
   }, []);
 
   useEffect(() => {
-    if (authProfileOrganizations || authProfileOrganizations === null) {
-      setIsAuthorized(true);
-    }
+    // if (authProfileOrganizations || authProfileOrganizations === null) {
+    setIsAuthorized(true);
+    // }
   }, [authProfileOrganizations]);
 
   useEffect(() => {
     if (apiError) {
       errorHandlers.axiosErrorsHandler(apiError);
       setApiError(null);
-      !authService.isAuthenticated() && authService.logout(true);
+      // !authService.isAuthenticated() && authService.logout(true);
     }
   }, [apiError]);
 
@@ -150,7 +154,9 @@ export const AppContextProvider = ({ children }) => {
     [apiError, authProfile, isAuthorized],
   );
 
-  return !authService.isPending() && isAuthorized ? (
+  // !authService.isPending() &&
+
+  return isAuthorized ? (
     <AppContext.Provider value={AppContextObject}>{children}</AppContext.Provider>
   ) : (
     <div className="app-global-spinner">
@@ -160,3 +166,5 @@ export const AppContextProvider = ({ children }) => {
     </div>
   );
 };
+
+export default AppContextProvider;

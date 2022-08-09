@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Menu } from 'antd';
 import { MenuProps } from 'antd/lib/menu';
-import { TMenu } from '../../config/Menus';
+import { TMenu } from '../../config';
 import { useAppContext } from '../../providers/AppContextProvider';
 
 function findRoot(menu: any, path: string): string | undefined {
