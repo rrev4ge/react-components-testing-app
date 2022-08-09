@@ -1,0 +1,7 @@
+mutation SetLanguageCode($input: SetLanguageCodeInput!) {
+  setLanguageCode(input: $input) {
+    languageDto {
+      ...LanguageListItem
+    }
+  }
+}

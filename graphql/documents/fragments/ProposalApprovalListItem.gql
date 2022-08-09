@@ -1,0 +1,13 @@
+fragment ProposalApprovalListItem on ProposalApprovalDto {
+  approvalId
+  approvedBy {
+    ...UserListItem
+  }
+  approvedById
+  comment
+  createdAt
+  level
+  status
+  createdAt
+  updatedAt
+}

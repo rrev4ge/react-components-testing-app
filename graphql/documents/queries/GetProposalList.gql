@@ -1,0 +1,16 @@
+query GetProposalList(
+  $filter: ProposalFilterDtoInput
+  $sort: [SortFieldOfProposalsSortingInput!]
+  $take: Int!
+  $skip: Int!
+  ) {
+  proposals(filter: $filter, sort: $sort, take: $take, skip: $skip) {
+    items {
+      ...ProposalListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

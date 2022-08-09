@@ -1,0 +1,17 @@
+fragment ProposalListItem on ProposalDto {
+  approvals {
+    ...ProposalApprovalListItem
+  }
+  code
+  createdAt
+  englishBookId
+  languageId
+  organizationId
+  proposalId
+  proposer {
+    ...UserListItem
+  }
+  status
+  title
+  updatedAt
+}

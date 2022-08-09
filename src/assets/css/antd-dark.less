@@ -1,0 +1,51 @@
+@import '../../../node_modules/antd/lib/style/themes/dark.less';
+@import "./antd-config";
+@import "../../../node_modules/antd/lib/style/index";
+@import "../../../node_modules/antd/lib/style/components";
+//@import "./chrome-scrollbar";
+
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  //min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+@import "./layout/logo";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/sider";
+@import "./layout/content";
+@import "./components";
+
+@layout-trigger-background: #262626;
+
+.paragraphList .ant-card {
+  background: #141414;
+}
+
+.borderedBlock {
+  padding: 10px;
+  border: 1px solid #434343;
+  border-radius: 2px;
+}
+
+.ant-menu-submenu.is-admin {
+  color: #ff4d4f;
+}
+
+.ant-menu-item.is-admin {
+  color: #ff4d4f;
+}
+
+.ant-tree {
+  background: #141414;
+}
+
+.auth-header--root > .ant-card-head {
+  background-color: transparent;
+}

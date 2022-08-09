@@ -1,0 +1,8 @@
+stages:          # List of stages for jobs, and their order of execution
+  - test
+
+zero-test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "[disabled] Running tests... This will take about 0 seconds."
+    - echo "Code coverage is 0%"

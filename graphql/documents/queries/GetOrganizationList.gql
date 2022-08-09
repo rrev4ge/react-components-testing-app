@@ -1,0 +1,15 @@
+query GetOrganizationList(
+  $filter: OrganizationFilterDtoInput
+  $take: Int!
+  $skip: Int!
+) {
+  organizations(filter: $filter, take: $take, skip: $skip) {
+    items {
+      ...OrganizationListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

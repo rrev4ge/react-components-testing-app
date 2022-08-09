@@ -1,0 +1,126 @@
+.editable-cell {
+  position: relative;
+}
+
+.editable-cell-value-wrap {
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.editable-row:hover .editable-cell-value-wrap {
+  padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+.editable-row:hover .editable-cell-null-wrap {
+  height: 2rem;
+  //padding: 4px 11px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+[data-theme='dark'] .editable-row:hover .editable-cell-value-wrap {
+  border: 1px solid #434343;
+}
+
+.sel-mid {
+  background-color: #120A8F;
+  color: white;
+}
+
+.sel-handle {
+  cursor: ew-resize;
+  color: tomato;
+  display: inline-block;
+  overflow: visible;
+  background-color: tomato;
+  height: fit-content;
+  vertical-align: top;
+  horiz-align: center;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    background-color: tomato;
+    width: 0.5rem;
+    height: 0.5rem;
+    position: absolute;
+    left: -0.15rem;
+    top: -0.15rem;
+    border-radius: 100%;
+  }
+}
+
+.ant-tree {
+  padding: 10px 0;
+}
+
+.ant-menu-vertical .ant-menu-item:not(:last-child), .ant-menu-vertical-left .ant-menu-item:not(:last-child), .ant-menu-vertical-right .ant-menu-item:not(:last-child), .ant-menu-inline .ant-menu-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.ant-menu > .ant-menu-item-divider {
+  margin: 0;
+  padding: 0;
+}
+
+.ant-spin-container>ul:last-child>.ant-pagination-total-text>div {
+  visibility: hidden;
+}
+
+.app-form-template .ant-form-item {
+  margin-bottom: 0;
+}
+
+.example {
+  margin: 20px 0;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.app-enable-switch  {
+  color: #6abe39;
+  background: #162312;
+  border:1px solid #274916;
+  height: auto;
+}
+
+.app-enable-switch .ant-switch-handle::before {
+  background: #6abe39;
+}
+
+.app-disable-switch {
+  color: #e87040;
+  background: #2b1611;
+  border:1px solid #592716;
+  height: auto;
+}
+
+.app-disable-switch .ant-switch-handle::before {
+  background: #e87040;
+}
+
+.app-users-tabs > .ant-tabs-nav::before{
+  border-bottom: none;
+}
+
+.app-proposal-list-table .ant-table-row {
+  cursor: pointer;
+}
+
+.app-global-spinner {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  margin: 20px 0;
+  padding: 30px 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}

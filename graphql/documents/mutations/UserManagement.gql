@@ -1,0 +1,59 @@
+mutation CreateUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  },
+}
+
+mutation DeleteUser($input: DeleteUserInput!) {
+  deleteUser(input: $input) {
+    boolean
+  }
+}
+
+mutation ChangeUserEmail($input: ChangeUserEmailInput!) {
+  changeUserEmail(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  }
+}
+
+mutation ChangeUserName($input: ChangeUserNameInput!) {
+  changeUserName(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  }
+}
+
+mutation ChangeUserOrganization($input: ChangeUserOrganizationInput!) {
+  changeUserOrganization(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  }
+}
+
+mutation UpdateUserRoles($input: UpdateUserRolesInput!) {
+  updateUserRoles(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  }
+}
+
+mutation ClearUserRoles($input: ClearUserRolesInput!) {
+  clearUserRoles(input: $input) {
+    userDto {
+      ...UserListItem
+    }
+  }
+}
+
+mutation SetUserStatus($input: SetUserStatusInput!) {
+  setUserStatus(input: $input) {
+    boolean
+  }
+}

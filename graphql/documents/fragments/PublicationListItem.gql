@@ -1,0 +1,31 @@
+fragment PublicationListItem on PublicationDto {
+  chapterCount
+  code
+  createdAt
+  id
+  language {
+    ...LanguageListItem
+  }
+  original {
+    ...Publication
+  }
+  pageCount
+  title
+  translations {
+    ...Publication
+  }
+  updatedAt
+}
+
+fragment Publication on PublicationDto {
+  chapterCount
+  code
+  createdAt
+  id
+  language {
+    ...LanguageListItem
+  }
+  pageCount
+  title
+  updatedAt
+}

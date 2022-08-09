@@ -1,0 +1,16 @@
+query GetUserList(
+  $filter: UserFilterDtoInput
+  $sort: [SortFieldOfUserListSortingInput!]
+  $take: Int!
+  $skip: Int!
+) {
+  users(filter: $filter, sort: $sort, take: $take, skip: $skip) {
+    items {
+      ...UserListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

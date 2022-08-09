@@ -1,0 +1,5 @@
+query GetLanguageOne($code: String!) {
+  language(code: $code) {
+    ...LanguageListItem
+  }
+}

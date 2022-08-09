@@ -1,0 +1,5 @@
+query GetPublicationOne($id: Int!) {
+  publication(id: $id) {
+    ...PublicationListItem
+  }
+}

@@ -1,0 +1,5 @@
+fragment LanguageListItem on LanguageDto {
+  code
+  name
+  egwCode
+}

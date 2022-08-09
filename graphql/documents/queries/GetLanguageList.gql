@@ -1,0 +1,16 @@
+query GetLanguageList(
+  $filter: LanguageFilterDtoInput
+  $sort: [SortFieldOfLanguageSortingInput!]
+  $take: Int!
+  $skip: Int!
+) {
+  languages(filter: $filter, sort: $sort, take: $take, skip: $skip) {
+    items {
+      ...LanguageListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

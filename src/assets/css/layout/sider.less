@@ -1,0 +1,37 @@
+.ant-layout-sider {
+  position: fixed;
+  height: calc(100vh - 64px);
+  left: 0;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+
+.ant-layout-sider::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.app-layout-sider-zero-width-trigger {
+  border: none;
+  background: none;
+  position: fixed;
+  top: 16px;
+  left: 8px;
+  z-index: 112;
+  color: white;
+
+  &:hover, &:focus, &:active {
+    border: none;
+    background: none;
+  }
+}
+
+.ant-menu-submenu.is-admin {
+  color: #ff4d4f;
+}
+
+.ant-menu-item.is-admin {
+  color: #ff4d4f;
+}

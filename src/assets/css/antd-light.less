@@ -1,0 +1,46 @@
+@import '../../../node_modules/antd/lib/style/themes/default.less';
+@import "./antd-config";
+@import "../../../node_modules/antd/lib/style/index";
+@import "../../../node_modules/antd/lib/style/components";
+
+body {
+  //min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+@import "./layout/logo";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/sider";
+@import "./layout/content";
+@import "./components";
+
+@--layout-background: #3a4651;
+
+
+//@primary-color: #1588B1;
+//@primary-color: #fe8019;
+@layout-header-background: #3a4651;
+@layout-sider-background: @layout-header-background;
+@layout-trigger-background: #3a4651;
+@menu-bg: #3a4651;
+@menu-dark-bg: #3a4651;
+@menu-dark-inline-submenu-bg: #3a4651;
+@menu-dark-bg: @layout-header-background;
+
+
+.borderedBlock {
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+.ant-menu-submenu.is-admin {
+  color: #ff4d4f;
+}
+
+.ant-menu-item.is-admin {
+  color: #ff4d4f;
+}

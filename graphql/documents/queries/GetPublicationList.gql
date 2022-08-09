@@ -1,0 +1,16 @@
+query GetPublicationList(
+  $filter: PublicationFilterDtoInput
+  $sort: [SortFieldOfPublicationsSortingInput!]
+  $take: Int!
+  $skip: Int!
+) {
+  publications(filter: $filter, sort: $sort, take: $take, skip: $skip) {
+    items {
+      ...PublicationListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

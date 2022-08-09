@@ -1,0 +1,5 @@
+query GetUserOne($id: UUID!) {
+  user(id: $id) {
+    ...UserListItem
+  }
+}

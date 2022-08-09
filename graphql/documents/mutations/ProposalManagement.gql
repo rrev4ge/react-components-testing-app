@@ -1,0 +1,15 @@
+mutation ApproveProposal($input: ApproveProposalInput!) {
+  approveProposal(input: $input) {
+    proposalDto {
+      ...ProposalListItem
+    }
+  }
+}
+
+mutation CreateProposal($input: CreateProposalInput!) {
+  createProposal(input: $input) {
+    proposalDto {
+      ...ProposalListItem
+    }
+  }
+}

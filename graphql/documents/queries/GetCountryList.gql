@@ -1,0 +1,16 @@
+query GetCountryList(
+  $filter: CountryFilterDtoInput
+  $sort: [SortFieldOfCountryListSortingInput!]
+  $take: Int!
+  $skip: Int!
+) {
+  countries(filter: $filter, sort: $sort, take: $take, skip: $skip) {
+    items {
+      ...CountryListItem
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}

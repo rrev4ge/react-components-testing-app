@@ -1,0 +1,23 @@
+overwrite: true
+schema:
+  - "${REACT_APP_API_URL:https://trans-dash-api.alpha.egwhite.net}/graphql":
+      headers:
+        Authorization: "Bearer ${GQL_CODEGEN_TOKEN}"
+documents: "./graphql/documents/**/*.gql"
+generates:
+  ./graphql/schema.graphql:
+    plugins:
+      - "schema-ast"
+  ./src/services/apolloGraphqlAppClient/models/types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
+      withResultType: true
+      dedupeFragments: true
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+    - eslint --fix

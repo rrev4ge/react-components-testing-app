@@ -1,0 +1,66 @@
+.ant-layout-header {
+  position: sticky;
+  width: 100%;
+  z-index: 111;
+  top: 0;
+}
+
+.app-header--root {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+}
+.auth-header--root {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-60%, -50%);
+}
+
+.auth-header--root > .ant-card-head {
+  background-color: #3a4651;
+}
+
+.app-header--logo {
+  //flex-grow: 1;
+}
+
+.app-header--username {
+  font-family: "Jura", sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  .anticon {
+    font-size: 12px;
+  }
+}
+
+.app-header--profile-dropdown {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.app-header--avatar {
+  align-self: center;
+}
+
+.switchDarkTheme, .switchLightTheme {
+  font-size: 30px;
+  margin: auto 0;
+  border-radius: 50%;
+  //text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  line-height: 0;
+}
+
+.ant-menu-inline > .user-role-switcher--dev > .ant-menu-submenu-title {
+  height: auto;
+}
