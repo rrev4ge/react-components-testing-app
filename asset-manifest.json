@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/react-components-testing-ui/static/css/main.ed9c3383.css",
-    "main.js": "/react-components-testing-ui/static/js/main.122eee68.js",
-    "static/css/690.785a4951.chunk.css": "/react-components-testing-ui/static/css/690.785a4951.chunk.css",
+    "main.js": "/react-components-testing-ui/static/js/main.d9bc88fd.js",
+    "static/css/690.9aca32aa.chunk.css": "/react-components-testing-ui/static/css/690.9aca32aa.chunk.css",
     "static/js/690.2b04b4d6.chunk.js": "/react-components-testing-ui/static/js/690.2b04b4d6.chunk.js",
-    "static/css/289.34b78850.chunk.css": "/react-components-testing-ui/static/css/289.34b78850.chunk.css",
+    "static/css/289.70480f79.chunk.css": "/react-components-testing-ui/static/css/289.70480f79.chunk.css",
     "static/js/289.a40aaf39.chunk.js": "/react-components-testing-ui/static/js/289.a40aaf39.chunk.js",
     "static/js/747.fd3556be.chunk.js": "/react-components-testing-ui/static/js/747.fd3556be.chunk.js",
     "static/js/516.1f1a8517.chunk.js": "/react-components-testing-ui/static/js/516.1f1a8517.chunk.js",
+    "static/media/logo.svg": "/react-components-testing-ui/static/media/logo.23fe32214365524cbba3f0f48c007b85.svg",
     "static/media/pray4uk.jpg": "/react-components-testing-ui/static/media/pray4uk.84467d843ee4c42af61b.jpg",
-    "static/media/logo.svg": "/react-components-testing-ui/static/media/logo.d69a242e0ac37b62ba06f5a3029a0dfd.svg",
     "static/media/SelectOutlined.svg": "/react-components-testing-ui/static/media/SelectOutlined.30c9eeda8b70e60ffb35769c9a639d58.svg",
     "static/media/LogOutOutlined.svg": "/react-components-testing-ui/static/media/LogOutOutlined.f3093d9d9f20220e05841c9b23c363b8.svg",
     "index.html": "/react-components-testing-ui/index.html",
     "main.ed9c3383.css.map": "/react-components-testing-ui/static/css/main.ed9c3383.css.map",
-    "main.122eee68.js.map": "/react-components-testing-ui/static/js/main.122eee68.js.map",
-    "690.785a4951.chunk.css.map": "/react-components-testing-ui/static/css/690.785a4951.chunk.css.map",
+    "main.d9bc88fd.js.map": "/react-components-testing-ui/static/js/main.d9bc88fd.js.map",
+    "690.9aca32aa.chunk.css.map": "/react-components-testing-ui/static/css/690.9aca32aa.chunk.css.map",
     "690.2b04b4d6.chunk.js.map": "/react-components-testing-ui/static/js/690.2b04b4d6.chunk.js.map",
-    "289.34b78850.chunk.css.map": "/react-components-testing-ui/static/css/289.34b78850.chunk.css.map",
+    "289.70480f79.chunk.css.map": "/react-components-testing-ui/static/css/289.70480f79.chunk.css.map",
     "289.a40aaf39.chunk.js.map": "/react-components-testing-ui/static/js/289.a40aaf39.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed9c3383.css",
-    "static/js/main.122eee68.js"
+    "static/js/main.d9bc88fd.js"
   ]
 }
