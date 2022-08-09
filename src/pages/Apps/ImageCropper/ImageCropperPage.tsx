@@ -5,6 +5,7 @@ import { RegionSelector, TCoordinateType } from 'react-image-regions-selector';
 import 'react-image-regions-selector/dist/index.css';
 import './ImageCropperPage.css';
 import { useWindowDimensions } from '../../../hooks';
+import { PageTemplate } from '../../../components';
 
 const defaultRegionList = [
   {
@@ -53,71 +54,73 @@ const ImageCropperPage = () => {
   // };
 
   return (
-    <div className="flexPage">
-      <Dragger
-        name="files"
-        accept="image/*"
-        multiple={false}
-        maxCount={1}
-        onRemove={(file) => {
-          setRegions(defaultRegionList);
-          setUploadImg('');
-        }}
-        onChange={({ file, fileList }) => {
-          setRegions(defaultRegionList);
-          if (file?.status === 'removed') {
+    <PageTemplate>
+      <div className="flexPage">
+        <Dragger
+          name="files"
+          accept="image/*"
+          multiple={false}
+          maxCount={1}
+          onRemove={(file) => {
+            setRegions(defaultRegionList);
             setUploadImg('');
-            return;
-          }
-          const reader = new FileReader();
-          reader.onload = (_e) => setUploadImg((reader.result as string) || '');
+          }}
+          onChange={({ file, fileList }) => {
+            setRegions(defaultRegionList);
+            if (file?.status === 'removed') {
+              setUploadImg('');
+              return;
+            }
+            const reader = new FileReader();
+            reader.onload = (_e) => setUploadImg((reader.result as string) || '');
 
-          reader.readAsDataURL(file.originFileObj!);
-        }}
-        customRequest={({ file, onSuccess }) => {
-          setTimeout(() => {
-            onSuccess && onSuccess('ok');
-          }, 0);
-        }}
-      >
-        <p
-          className="ant-upload-drag-icon"
-          style={{
-            display: 'flex',
-            flexWrap: 'nowrap',
-            gap: 5,
-            alignItems: 'center',
-            padding: '0 10px',
-            marginBottom: 0,
+            reader.readAsDataURL(file.originFileObj!);
+          }}
+          customRequest={({ file, onSuccess }) => {
+            setTimeout(() => {
+              onSuccess && onSuccess('ok');
+            }, 0);
           }}
         >
-          <InboxOutlined />
-          <span className="ant-upload-text">Click or drag Image to this area</span>
-        </p>
-      </Dragger>
-      {/* <input type="file" accept="image/*" onChange={onSelectFile} /> */}
-      <div
-        style={{
-          padding: 8,
-          position: 'relative',
-        }}
-      >
-        <RegionSelector
-          src={uploadImg}
-          inProportions
-          regions={regions}
-          width={windowDimensions.width < 720 ? 300 : 500}
-          maxRegionListLength={9}
-          cropConfig={{
-            hasDeleteButton: true,
-            hasContent: true,
+          <p
+            className="ant-upload-drag-icon"
+            style={{
+              display: 'flex',
+              flexWrap: 'nowrap',
+              gap: 5,
+              alignItems: 'center',
+              padding: '0 10px',
+              marginBottom: 0,
+            }}
+          >
+            <InboxOutlined />
+            <span className="ant-upload-text">Click or drag Image to this area</span>
+          </p>
+        </Dragger>
+        {/* <input type="file" accept="image/*" onChange={onSelectFile} /> */}
+        <div
+          style={{
+            padding: 8,
+            position: 'relative',
           }}
-          onRegionChange={(regions) => {
-            setRegions(regions);
-          }}
-        />
+        >
+          <RegionSelector
+            src={uploadImg}
+            inProportions
+            regions={regions}
+            width={windowDimensions.width < 720 ? 300 : 500}
+            maxRegionListLength={9}
+            cropConfig={{
+              hasDeleteButton: true,
+              hasContent: true,
+            }}
+            onRegionChange={(regions) => {
+              setRegions(regions);
+            }}
+          />
+        </div>
       </div>
-    </div>
+    </PageTemplate>
   );
 };
 

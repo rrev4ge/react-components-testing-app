@@ -13,7 +13,7 @@ const HeaderLayout = (): React.ReactElement => (
       </div>
       <FlexListTemplate flexWrap="nowrap" gap={10} justifyContent="right">
         <ThemeSwitcher />
-        <ProfileLayout />
+        {/* <ProfileLayout /> */}
       </FlexListTemplate>
     </div>
   </Layout.Header>

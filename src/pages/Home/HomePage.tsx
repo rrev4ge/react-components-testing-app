@@ -4,7 +4,7 @@ import { PageTemplate } from '../../components';
 
 const HomePage = () => {
   return (
-    <PageTemplate title="Home">
+    <PageTemplate>
       <Empty description="Home Page" />
     </PageTemplate>
   );

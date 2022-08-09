@@ -2,6 +2,7 @@
 
 export interface IConstants {
   APP_TITLE: string;
+  APP_ROOT_URL: string;
   APP_API_URL: string;
   APP_API_USERNAME: string;
   APP_API_PASSWORD: string;
@@ -26,6 +27,7 @@ export interface IConstants {
 
 const CONSTANTS: IConstants = {
   APP_TITLE: process.env.REACT_APP_TITLE || 'React App',
+  APP_ROOT_URL: process.env.REACT_APP_DEFAULT_URL_PATH || '/',
   APP_API_URL: `${process.env.REACT_APP_API_URL}${
     process.env.REACT_APP_API_PORT ? `:${process.env.REACT_APP_API_PORT}` : ''
   }`,

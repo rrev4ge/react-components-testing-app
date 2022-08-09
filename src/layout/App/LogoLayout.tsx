@@ -5,8 +5,8 @@ import pray4uk from '../../assets/images/pray4uk.jpg';
 import CONSTANTS from '../../config/CONSTANTS';
 import { FlexListTemplate } from '../../components';
 
-const logoSize = 0.6;
-const ratio = 86.0 / 55;
+const logoSize = 0.7;
+const ratio = 86 / 55;
 
 const height = 64;
 const imageWidth = height * logoSize * ratio;
@@ -17,12 +17,7 @@ const LogoLayout = (): React.ReactElement => {
     <div className="app-logo--brand">
       <Link className="app-logo-auth" to="/">
         <FlexListTemplate flexWrap="nowrap" gap={5}>
-          <img
-            className="app-logo--image"
-            src={logo}
-            alt="EGW Quotes"
-            style={{ width: `${imageWidth}px`, height: `${imageHeight}px` }}
-          />
+          <img className="app-logo--image" src={logo} alt="EGW Quotes" style={{ width: 55, height: 55 }} />
           <div className="app-logo--text">
             <p className="app-logo--title">{CONSTANTS.APP_TITLE}</p>
           </div>

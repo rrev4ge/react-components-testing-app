@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { AppRouter, AuthRouter } from './index';
 import { AcceptPermissionHoc } from '../components';
+import { CONSTANTS } from '../config';
 
 const RootRouter = ({ ...rest }): React.ReactElement => {
   // else

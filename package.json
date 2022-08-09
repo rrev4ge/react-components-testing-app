@@ -83,8 +83,8 @@
     "lint": "eslint src/ --fix",
     "gql-codegen": "graphql-codegen --require dotenv/config --config codegen.yml dotenv_config_path=.env",
     "oapi-codegen": "openapi -i https://trans-dash-api.alpha.egwhite.net/swagger/v1/swagger.json -o ./src/services/axiosApiAppClient -c axios --exportSchemas true --name axiosApiAppClient",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-ROUTES -d example/build"
+    "predeploy": "npm install && craco build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

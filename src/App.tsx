@@ -8,6 +8,7 @@ import {
   AuthenticationProvider,
   MobxAppClientProvider,
 } from './providers';
+import { CONSTANTS } from './config';
 
 const App = (): JSX.Element => {
   return (
@@ -16,7 +17,7 @@ const App = (): JSX.Element => {
         <AppContextProvider>
           <MobxAppClientProvider>
             <ApolloAppClientProvider>
-              <BrowserRouter>
+              <BrowserRouter basename={CONSTANTS.APP_ROOT_URL}>
                 <RootRouter />
               </BrowserRouter>
             </ApolloAppClientProvider>

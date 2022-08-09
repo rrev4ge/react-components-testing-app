@@ -4,6 +4,7 @@ import { TextPartsSelector } from 'react-text-parts-selector';
 import 'react-text-parts-selector/dist/index.css';
 import './TextSelectorPage.css';
 import { useDebounce, useDidMountEffect, useWindowDimensions } from '../../../hooks';
+import { PageTemplate } from '../../../components';
 
 const defaultParagraphList = [
   {
@@ -104,40 +105,42 @@ const TextSelector = () => {
   }, 800);
 
   return (
-    <Row gutter={[16, 16]}>
-      <Col flex={`1 0 ${windowDimensions.width < 728 ? '100%' : '50%'}`}>
-        <Card title="Input Arrea" style={{ width: '100%' }}>
-          <Input.TextArea
-            autoSize={{ minRows: 14, maxRows: 14 }}
-            style={{ width: '100%' }}
-            placeholder="maxLength is 1501"
-            maxLength={1501}
-            onChange={(e) => {
-              handleChange(e.target.value);
-            }}
-          />
-        </Card>
-      </Col>
-      <Col flex={`1 0 ${windowDimensions.width < 728 ? '100%' : '50%'}`}>
-        <Card title="Selection Arrea" style={{ width: '100%' }}>
-          <Card style={{ width: '100%' }}>
-            <TextPartsSelector
-              affectedContent={paragraph}
-              targetContent={sortQuoteList.map((q) => ({
-                id: q.id,
-                content: q.content,
-                start: q.posBegin,
-                end: q.posEnd,
-                color: q.color,
-              }))}
-              setTargetContent={setTargetContent}
-              // isTriggered={!selectedQuote}
-              multiple // {...(!selectedQuote ? { hoverQuote } : {})}
+    <PageTemplate>
+      <Row gutter={[16, 16]}>
+        <Col flex={`1 0 ${windowDimensions.width < 728 ? '100%' : '50%'}`}>
+          <Card title="Input Arrea" style={{ width: '100%' }}>
+            <Input.TextArea
+              autoSize={{ minRows: 14, maxRows: 14 }}
+              style={{ width: '100%' }}
+              placeholder="maxLength is 1501"
+              maxLength={1501}
+              onChange={(e) => {
+                handleChange(e.target.value);
+              }}
             />
           </Card>
-        </Card>
-      </Col>
-    </Row>
+        </Col>
+        <Col flex={`1 0 ${windowDimensions.width < 728 ? '100%' : '50%'}`}>
+          <Card title="Selection Arrea" style={{ width: '100%' }}>
+            <Card style={{ width: '100%' }}>
+              <TextPartsSelector
+                affectedContent={paragraph}
+                targetContent={sortQuoteList.map((q) => ({
+                  id: q.id,
+                  content: q.content,
+                  start: q.posBegin,
+                  end: q.posEnd,
+                  color: q.color,
+                }))}
+                setTargetContent={setTargetContent}
+                // isTriggered={!selectedQuote}
+                multiple // {...(!selectedQuote ? { hoverQuote } : {})}
+              />
+            </Card>
+          </Card>
+        </Col>
+      </Row>
+    </PageTemplate>
   );
 };
 
