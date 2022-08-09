@@ -1,0 +1,7 @@
+query GetQuery(
+  $props: any
+) {
+  queryPoint(props: $props) {
+    id
+  }
+}

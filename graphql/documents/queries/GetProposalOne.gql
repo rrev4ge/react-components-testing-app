@@ -1,5 +1,0 @@
-query GetProposalOne($id: UUID!) {
-  proposal(id: $id) {
-    ...ProposalListItem
-  }
-}

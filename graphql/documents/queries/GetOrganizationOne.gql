@@ -1,5 +1,0 @@
-query GetOrganizationOne($id: String!) {
-  organization(id: $id) {
-    ...OrganizationListItem
-  }
-}

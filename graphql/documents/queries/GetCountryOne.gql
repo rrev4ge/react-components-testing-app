@@ -1,7 +1,0 @@
-query GetCountryOne(
-  $code: String!
-) {
-  country(code: $code) {
-    ...CountryListItem
-  }
-}

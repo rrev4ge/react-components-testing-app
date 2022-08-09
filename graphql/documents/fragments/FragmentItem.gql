@@ -1,0 +1,3 @@
+fragment FragmentItem on any {
+  id
+}

@@ -1,4 +1,0 @@
-fragment CountryListItem on CountryDto {
-  code
-  name
-}
